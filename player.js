@@ -20,21 +20,8 @@ export const player = (() => {
       this.rightMovementSpeed = 0.3;
       this.jumping_ = false;
       this.inAir_ = false;
-
-      // this.mesh_ = new THREE.Mesh(
-      //     new THREE.BoxBufferGeometry(1, 1, 1),
-      //     new THREE.MeshStandardMaterial({
-      //         color: 0x80FF80,
-      //     }),
-      // );
-      // this.mesh_.castShadow = true;
-      // this.mesh_.receiveShadow = true;
-      // params.scene.add(this.mesh_);
-
       this.playerBox_ = new THREE.Box3();
-
       this.params_ = params;
-
       this.LoadModel_();
       this.InitInput_();
     }
@@ -114,8 +101,8 @@ export const player = (() => {
       });
 
         // Add swipe gestures using Hammer.js
-        const canvas = document.getElementById("gameCanvas");
-        const hammertime = new Hammer(canvas);
+        const hammertime = new Hammer(this.mesh_);
+        hammertime.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL }));
         hammertime.on('swipeleft', () => {
           console.log('swipe left event fired');
           this.keys_.left = true;
