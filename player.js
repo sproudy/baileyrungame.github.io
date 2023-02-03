@@ -103,16 +103,14 @@ export const player = (() => {
         // Add swipe gestures using Hammer.js
         const hammertime = new Hammer(this.mesh_);
         hammertime.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL }));
+        
         hammertime.on('swipeleft', () => {
-          console.log('swipe left event fired');
           this.keys_.left = true;
         });
         hammertime.on('swiperight', () => {
-          console.log('swipe right event fired');
           this.keys_.right = true;
         });
-        hammertime.on('swipeup', () => {
-          console.log('swipe up event fired');  
+        hammertime.on('swipeup', () => { 
           this.keys_.space = true;
         });
         hammertime.on('swipeend', () => {
