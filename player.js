@@ -6,6 +6,8 @@
 
 /*import * as Hammer from './node_modules/hammerjs/hammer.jss';*/
 
+/*import $ from "jquery";*/
+
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.124/build/three.module.js';
 
 import {FBXLoader} from 'https://cdn.jsdelivr.net/npm/three@0.124/examples/jsm/loaders/FBXLoader.js';
@@ -101,7 +103,7 @@ export const player = (() => {
       });
 
         // Add swipe gestures using Hammer.js
-        const hammertime = new Hammer(this.mesh_);
+        /*const hammertime = new Hammer(this.mesh_);
         hammertime.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL }));
         
         hammertime.on('swipeleft', () => {
@@ -117,7 +119,7 @@ export const player = (() => {
             this.keys_.left = false;
             this.keys_.right = false;
             this.keys_.space = false;
-        });
+        });*/
   }
     
     OnKeyDown_(event) {

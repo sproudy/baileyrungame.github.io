@@ -215,7 +215,7 @@ class BasicWorldDemo {
  
     const loader = new FBXLoader();
       loader.setPath('./resources/Map/FBX/');
-      loader.load('piratemap10.fbx', (fbx) => {
+      loader.load('piratemap.fbx', (fbx) => {
         fbx.castShadow = true;
         fbx.receiveShadow = true;
         fbx.position.set(-5, 0, 0);
