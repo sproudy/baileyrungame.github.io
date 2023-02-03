@@ -213,19 +213,9 @@ class BasicWorldDemo {
     this.scene_.background = new THREE.Color(0x808080);
     this.scene_.fog = new THREE.FogExp2(0x89b2eb, 0.00125);
  
-   // const ground = new THREE.Mesh(
-   //     new THREE.PlaneGeometry(20000, 20000, 10, 10),
-   //     new THREE.MeshStandardMaterial({
-   //         color: 0xf6f47f,
-   //       }));
-   // ground.castShadow = false;
-   // ground.receiveShadow = true;
-   // ground.rotation.x = -Math.PI / 2;
-   // this.scene_.add(ground);
-
     const loader = new FBXLoader();
       loader.setPath('./resources/Map/FBX/');
-      loader.load('piratemap.fbx', (fbx) => {
+      loader.load('piratemap10.fbx', (fbx) => {
         fbx.castShadow = true;
         fbx.receiveShadow = true;
         fbx.position.set(-5, 0, 0);

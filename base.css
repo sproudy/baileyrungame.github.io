@@ -9,6 +9,13 @@ body {
   margin: 0;
   padding: 0;
   overscroll-behavior: none;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
 }
 
 .container {
@@ -119,8 +126,8 @@ body {
 .game-menu-box {
   background-color: rgb(228, 223, 201);
   position: relative;
-  width: 40%;
-  height: 30%;
+  width: 30%;
+  height: 40%;
   margin: 17.5% auto;
   border-width: 20px;
   border-style: solid;

@@ -1,7 +1,14 @@
+/*import {Hammer} from './node_modules/hammerjs/hammer.js';*/
+
+/*import {Hammer} from 'https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js';*/
+
+/*import 'hammerjs';*/
+
+/*import * as Hammer from './node_modules/hammerjs/hammer.jss';*/
+
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.124/build/three.module.js';
 
 import {FBXLoader} from 'https://cdn.jsdelivr.net/npm/three@0.124/examples/jsm/loaders/FBXLoader.js';
-
 
 export const player = (() => {
 
@@ -105,6 +112,27 @@ export const player = (() => {
               this.keys_.space = false;
           }
       });
+
+        // Add swipe gestures using Hammer.js
+        const canvas = document.getElementById("gameCanvas");
+        const hammertime = new Hammer(canvas);
+        hammertime.on('swipeleft', () => {
+          console.log('swipe left event fired');
+          this.keys_.left = true;
+        });
+        hammertime.on('swiperight', () => {
+          console.log('swipe right event fired');
+          this.keys_.right = true;
+        });
+        hammertime.on('swipeup', () => {
+          console.log('swipe up event fired');  
+          this.keys_.space = true;
+        });
+        hammertime.on('swipeend', () => {
+            this.keys_.left = false;
+            this.keys_.right = false;
+            this.keys_.space = false;
+        });
   }
     
     OnKeyDown_(event) {
